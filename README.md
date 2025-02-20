@@ -21,6 +21,7 @@ Multiple Camouflage Protocols: It simulates real traffic, such as DNS or HTTPS, 
 Automatic Mode Switching: If one camouflage mode is detected, the system can automatically switch to another.
 Encryption: Symmetric encryption (using the Fernet library) is used to protect the integrity and confidentiality of the data.
 Traffic Simulation: Traffic patterns are configurable to simulate realistic scenarios.
+
 2. What You’ll Need
 Before you begin, ensure you have the following:
 
@@ -31,11 +32,10 @@ The cryptography library, which can be installed via the Python package manager 
 pip install cryptography
 
 3. Setting Up the Environment
-Clone the Repository (Optional)
+Clone the Repository
 If you haven’t done so already, clone the repository to your local machine. You can do this using the following command:
 
-git clone https://github.com/your-repo/polymorphic-protocol-challenge.git
-cd polymorphic-protocol-challenge
+git clone git@github.com:f1g0n4cc1/The-Polymorphic-Protocol-Challenge.git
 
 Generate the Encryption Key
 The client and server need a shared encryption key for secure communication. This key is generated using the generate_key.py script.
@@ -59,6 +59,7 @@ The server will start listening on 127.0.0.1:65432 (localhost), waiting for clie
 The server will randomly select one of the available camouflage modes (such as DNS, HTTPS, or Custom UDP) to disguise the traffic.
 If a camouflage mode is detected, the server will automatically switch to a new mode.
 The server will decrypt incoming messages, print them out, and send back an acknowledgment.
+
 5. Running the Client
 With the server running, we can now start the client.
 
@@ -71,6 +72,7 @@ The client will randomly choose a camouflage mode (such as DNS, HTTPS, or Custom
 It will also choose a traffic pattern, such as "normal," "burst," or "slow," to simulate various network conditions.
 The client will then send encrypted and encoded messages to the server, wait for the server’s response, and print the result.
 If the current mode gets blocked (simulated by a random event), the client will automatically switch to a new mode.
+
 6. Exploring the Code
 The code is structured into a few key components that work together:
 
@@ -81,6 +83,7 @@ Key Features:
 Protocol Modes: The server and client can use different modes to camouflage the traffic. These include DNS, HTTPS, Custom UDP, and more. The server can switch between them to avoid detection.
 Traffic Simulation: The client can simulate normal, burst, or slow traffic patterns to test how the system performs under various network conditions.
 Encryption and Encoding: Data is encrypted using the Fernet symmetric encryption scheme and encoded using Base85 for additional obfuscation.
+
 7. Testing the Application
 To test the application, follow these steps:
 
@@ -88,12 +91,14 @@ Start the Server: Make sure the server is running and ready to accept connection
 Start the Client: Launch the client and observe how it communicates with the server.
 You will see logs of the communication, including the modes being used, the traffic patterns, and any switches between modes.
 Verify Mode Switching: Simulate mode blocking (by modifying the probability in the server code) to observe how the client and server handle switching between modes.
+
 8. Optional Enhancements
 There are several optional enhancements that you can add to this project to make it more flexible and secure:
 
 Improved Traffic Patterns: You can modify the traffic patterns to simulate more complex scenarios, such as mimicking real-world internet usage patterns.
 Advanced Protocol Camouflage: Experiment with other network protocols or create custom camouflage modes for more advanced obfuscation.
 Error Handling: Implement more sophisticated error handling to gracefully recover from network interruptions or other issues.
+
 9. Next Steps & Future Enhancements
 As you explore the Polymorphic Protocol Challenge, you might want to experiment with the following:
 
